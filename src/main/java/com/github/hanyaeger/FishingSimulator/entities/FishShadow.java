@@ -1,36 +1,32 @@
 package com.github.hanyaeger.FishingSimulator.entities;
 
+import com.github.hanyaeger.FishingSimulator.Zee;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collider;
-import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.Newtonian;
-import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import com.github.hanyaeger.api.scenes.SceneBorder;
 
-public class FishShadow extends DynamicSpriteEntity implements Newtonian, SceneBorderTouchingWatcher, Collider {
+public class FishShadow extends DynamicSpriteEntity implements Newtonian, Collider {
 
-    public FishShadow(Coordinate2D initialLocation) {
+    private Zee zee;
+
+    public FishShadow(Coordinate2D initialLocation, Zee zee) {
         super("sprites/fish_shadow.png", initialLocation, new Size(150, 150), 1, 1);
-        setMotion(2, Direction.RIGHT);
+        this.zee = zee;
+        setMotion(1, 270d);
     }
 
-    @Override
-    public void notifyBoundaryTouching(SceneBorder border) {
-        switch (border) {
-            case TOP:
-                setAnchorLocationY(1);
-                break;
-            case BOTTOM:
-                setAnchorLocationY(10);
-                break;
-            case LEFT:
-                setAnchorLocationX(1);
-                break;
-            case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
-                break;
+    public void notifyBoundaryTouching(Coordinate2D location) {
+        if (zee.getBoundingBox().getMaxY() < location.getY()) {
+            System.out.println("test");
+        } else if (zee.getBoundingBox().getMinX() < location.getY()) {
+            System.out.println("test");
+        } else if (zee.getBoundingBox().getMinY() < location.getY()) {
+            System.out.println("test");
+        } else if (zee.getBoundingBox().getMaxX() < location.getY()) {
+            System.out.println("test");
         }
     }
+
 }
