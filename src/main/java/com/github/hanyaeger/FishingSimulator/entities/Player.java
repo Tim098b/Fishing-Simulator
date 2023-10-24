@@ -7,6 +7,6 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 public class Player extends SpriteEntity {
 
     public Player(Coordinate2D initialLocation) {
-        super("sprites/player.png", initialLocation, new Size(150, 100), 1, 1);
+        super("sprites/player_fishingrod.png", initialLocation, new Size(150, 100), 1, 1);
     }
 }
