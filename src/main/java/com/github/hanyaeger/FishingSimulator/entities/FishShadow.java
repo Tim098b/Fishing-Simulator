@@ -23,10 +23,16 @@ public class FishShadow extends DynamicSpriteEntity implements Collider, SceneBo
         switch (sceneBorder)
         {
             case LEFT:
+                setMotion(1, randomizeAngle(0, 180));
+                break;
             case RIGHT:
+                setMotion(1, randomizeAngle(180, 360));
+                break;
             case TOP:
-            case BOTTOM:
                 setMotion(1, randomizeAngle(0, 360));
+                break;
+            case BOTTOM:
+                setMotion(1, randomizeAngle(0, 280));
                 break;
         }
     }
@@ -34,4 +40,5 @@ public class FishShadow extends DynamicSpriteEntity implements Collider, SceneBo
     private double randomizeAngle(int i, int i1) {
         return Math.random() * (i1 - i) + i;
     }
+
 }
