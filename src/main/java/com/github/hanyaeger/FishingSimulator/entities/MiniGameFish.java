@@ -4,13 +4,13 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
-public class MiniGame extends SpriteEntity {
+public class MiniGameFish extends SpriteEntity {
 
-    public MiniGame(Coordinate2D initialLocation) {
-        super("sprites/minigame.png", initialLocation, new Size(100, 350), 1, 1);
+    public MiniGameFish(Coordinate2D initialLocation) {
+        super("sprites/minigame_fish.png", initialLocation, new Size(35, 35), 1, 1);
     }
 
-    public void removeMiniGame() {
+    public void removeMiniGameFish() {
         remove();
     }
 }
