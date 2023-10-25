@@ -14,10 +14,11 @@ import javafx.scene.input.MouseButton;
       
 public class Dobber extends DynamicSpriteEntity implements Collided, MouseButtonPressedListener {
 
+    private MiniGame miniGame;
+
     public Dobber(Coordinate2D initialLocation, MiniGame miniGame) {
         super("sprites/dobber.png", initialLocation);
         this.miniGame = miniGame;
-        private MiniGame miniGame;
     }
 
     @Override
