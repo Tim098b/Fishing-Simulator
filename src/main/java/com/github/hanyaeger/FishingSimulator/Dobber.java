@@ -8,13 +8,16 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import javafx.scene.input.MouseButton;
 
-public class Dobber extends DynamicSpriteEntity implements Collided {
+      
+public class Dobber extends DynamicSpriteEntity implements Collided, MouseButtonPressedListener {
 
-    private MiniGame miniGame;
     public Dobber(Coordinate2D initialLocation, MiniGame miniGame) {
         super("sprites/dobber.png", initialLocation);
         this.miniGame = miniGame;
+        private MiniGame miniGame;
     }
 
     @Override
@@ -22,5 +25,11 @@ public class Dobber extends DynamicSpriteEntity implements Collided {
         if (collider instanceof FishShadow) {
             miniGame.showMiniGame(true);
         }
+    }
+
+    @Override
+    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
+        remove();
+        GameScene.isFishing = false;
     }
 }

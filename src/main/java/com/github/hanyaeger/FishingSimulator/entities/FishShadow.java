@@ -10,11 +10,8 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 
 public class FishShadow extends DynamicSpriteEntity implements Collider, SceneBorderTouchingWatcher {
 
-    private Zee zee;
-
-    public FishShadow(Coordinate2D initialLocation, Zee zee) {
+    public FishShadow(Coordinate2D initialLocation) {
         super("sprites/fish_shadow.png", initialLocation, new Size(150, 150), 1, 1);
-        this.zee = zee;
         setMotion(1, 360d);
     }
 
