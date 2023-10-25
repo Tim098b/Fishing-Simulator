@@ -4,6 +4,7 @@ import com.github.hanyaeger.FishingSimulator.Dobber;
 import com.github.hanyaeger.FishingSimulator.MiniGameBorder;
 import com.github.hanyaeger.FishingSimulator.Zee;
 import com.github.hanyaeger.FishingSimulator.entities.*;
+import com.github.hanyaeger.FishingSimulator.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
@@ -23,7 +24,6 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
     MiniGameFish miniGameFish = new MiniGameFish(new Coordinate2D(382, 230));
     MiniGameBalk miniGameBalk = new MiniGameBalk(new Coordinate2D(390, 230));
 
-
     @Override
     public void setupEntities() {
         addEntity(new Zee(new Coordinate2D(650, 200), new Size(1300, 370)));
@@ -33,6 +33,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         addEntity(new Player(new Coordinate2D(250, 400)));
         addEntity(new FishShadow(new Coordinate2D(900, 600)));
         addEntity(new FishShadow(new Coordinate2D(900, 600)));
+        addEntity(new ScoreText(new Coordinate2D(30, 30), 0));
         addEntity(miniGame);
         addEntity(miniGameBalk);
         addEntity(miniGameFish);
