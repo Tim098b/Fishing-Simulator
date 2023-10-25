@@ -12,7 +12,7 @@ import javafx.scene.input.MouseButton;
 
 public class GameScene extends DynamicScene implements MouseButtonPressedListener {
 
-    public boolean isFishing = false;
+    public static boolean isFishing = false;
 
     @Override
     public void setupScene() {
@@ -21,13 +21,16 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
 
     @Override
     public void setupEntities() {
-        var zee = new Zee(new Coordinate2D(800, 550),
-                new Size(950, 330));
-        addEntity(zee);
+        var zeev1 = new Zee(new Coordinate2D(650, 200),
+                new Size(1300, 370));
+        var zeev2 = new Zee(new Coordinate2D(200, 550),
+                new Size(400, 350));
+        addEntity(zeev1);
+        addEntity(zeev2);
 
         var player = new Player(new Coordinate2D(250, 400));
         addEntity(player);
-        addEntity(new FishShadow(new Coordinate2D(900, 600), zee));
+        addEntity(new FishShadow(new Coordinate2D(900, 600)));
     }
 
     @Override
