@@ -12,10 +12,6 @@ public class MiniGame extends SpriteEntity {
         setVisible(false);
     }
 
-    public void removeMiniGame() {
-        remove();
-    }
-
     public void showMiniGame(boolean visible) {
         setVisible(visible);
     }
