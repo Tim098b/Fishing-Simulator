@@ -9,7 +9,7 @@ public class MiniGame extends SpriteEntity {
 
     public MiniGame(Coordinate2D initialLocation) {
         super("sprites/minigame.png", initialLocation, new Size(100, 350), 1, 1);
-        setVisible(true);
+        setVisible(false);
     }
 
     public void removeMiniGame() {
