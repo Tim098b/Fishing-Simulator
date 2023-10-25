@@ -32,8 +32,8 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
     public void setupEntities() {
         addEntity(new Zee(new Coordinate2D(650, 200), new Size(1300, 370)));
         addEntity(new Zee(new Coordinate2D(200, 550), new Size(400, 350)));
-        addEntity(new MiniGameBorder(new Coordinate2D(400, 60), new Size(50, 50)));
-        addEntity(new MiniGameBorder(new Coordinate2D(400, 440), new Size(50, 50)));
+        addEntity(new MiniGameBorder(new Coordinate2D(400, 85), new Size(50, 1)));
+        addEntity(new MiniGameBorder(new Coordinate2D(400, 415), new Size(50, 1)));
         addEntity(new Player(new Coordinate2D(250, 400)));
         for (int i = 0; i < 2; i++) {
             addEntity(new FishShadow(new Coordinate2D(900, 600)));
