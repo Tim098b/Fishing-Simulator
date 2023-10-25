@@ -10,12 +10,21 @@ public class ScoreText extends TextEntity {
 
     private int score;
 
-    public ScoreText(Coordinate2D initialLocation, int score){
+    public ScoreText(Coordinate2D initialLocation, int score) {
         super(initialLocation);
 
         this.score = score;
         setText("Score: " + score);
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         setFill(Color.BLACK);
+    }
+
+    public void setScore(int score) {
+        setText("Score: " + score);
+        this.score = score;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

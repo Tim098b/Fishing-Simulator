@@ -14,7 +14,7 @@ public class MiniGameBalk extends DynamicSpriteEntity implements Collider, Scene
         setVisible(false);
     }
 
-    public void showBalk(boolean visible) {
+    public void showMiniGameBalk(boolean visible) {
         setVisible(visible);
     }
 
