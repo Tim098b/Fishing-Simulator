@@ -13,6 +13,8 @@ import javafx.scene.input.MouseButton;
 public class GameScene extends DynamicScene implements MouseButtonPressedListener {
 
     public static boolean isFishing = false;
+    public static boolean inMiniGame = false;
+
 
     @Override
     public void setupScene() {
@@ -44,6 +46,19 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
             if (!isFishing) {
                 addEntity(new Dobber(new Coordinate2D(coordinate2D.getX() - 20, coordinate2D.getY() - 30), miniGame, miniGameFish, miniGameBalk));
                 isFishing = true;
+            }
+            if (inMiniGame) {
+                double balkTop = miniGameBalk.getAnchorLocation().getY();
+                double balkBottom = balkTop + miniGameBalk.getHeight();
+
+                double fishTop = miniGameFish.getAnchorLocation().getY();
+                double fishBottom = fishTop + miniGameFish.getHeight();
+
+                if (balkTop < fishTop && balkBottom > fishBottom) {
+                    System.out.println("Goed");
+                } else {
+                    System.out.println("Fout");
+                }
             }
         }
     }
