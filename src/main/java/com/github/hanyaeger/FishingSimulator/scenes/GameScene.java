@@ -3,6 +3,8 @@ package com.github.hanyaeger.FishingSimulator.scenes;
 import com.github.hanyaeger.FishingSimulator.Dobber;
 import com.github.hanyaeger.FishingSimulator.Zee;
 import com.github.hanyaeger.FishingSimulator.entities.FishShadow;
+import com.github.hanyaeger.FishingSimulator.entities.MiniGame;
+import com.github.hanyaeger.FishingSimulator.entities.MiniGameFish;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
@@ -19,6 +21,9 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         setBackgroundImage("backgrounds/gameBackground.gif");
     }
 
+    MiniGame miniGame = new MiniGame(new Coordinate2D(350, 75));
+
+
     @Override
     public void setupEntities() {
         var zeev1 = new Zee(new Coordinate2D(650, 200),
@@ -30,17 +35,19 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
 
         var player = new Player(new Coordinate2D(250, 400));
         addEntity(player);
+        addEntity(new FishShadow(new Coordinate2D(900, 600), zee));
+        addEntity(miniGame);
+        addEntity(new MiniGameFish(new Coordinate2D(382, 230)));
         addEntity(new FishShadow(new Coordinate2D(900, 600)));
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
         if (mouseButton == MouseButton.PRIMARY) {
-            if(!isFishing) {
-                addEntity(new Dobber(new Coordinate2D(coordinate2D.getX() - 20, coordinate2D.getY() - 30)));
+            if (!isFishing) {
+                addEntity(new Dobber(new Coordinate2D(coordinate2D.getX() - 20, coordinate2D.getY() - 30), miniGame));
                 isFishing = true;
             }
         }
     }
-
 }
