@@ -35,7 +35,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
 
         var player = new Player(new Coordinate2D(250, 400));
         addEntity(player);
-        addEntity(new FishShadow(new Coordinate2D(900, 600), zee));
+        addEntity(new FishShadow(new Coordinate2D(900, 600)));
         addEntity(miniGame);
         addEntity(new MiniGameFish(new Coordinate2D(382, 230)));
         addEntity(new FishShadow(new Coordinate2D(900, 600)));
