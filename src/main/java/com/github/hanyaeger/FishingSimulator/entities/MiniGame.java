@@ -6,11 +6,17 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
 public class MiniGame extends SpriteEntity {
 
+
     public MiniGame(Coordinate2D initialLocation) {
         super("sprites/minigame.png", initialLocation, new Size(100, 350), 1, 1);
+        setVisible(false);
     }
 
     public void removeMiniGame() {
         remove();
+    }
+
+    public void showMiniGame(boolean visible) {
+        setVisible(visible);
     }
 }

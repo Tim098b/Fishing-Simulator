@@ -21,6 +21,9 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         setBackgroundImage("backgrounds/gameBackground.gif");
     }
 
+    MiniGame miniGame = new MiniGame(new Coordinate2D(350, 75));
+
+
     @Override
     public void setupEntities() {
         var zee = new Zee(new Coordinate2D(800, 550),
@@ -30,18 +33,17 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         var player = new Player(new Coordinate2D(250, 400));
         addEntity(player);
         addEntity(new FishShadow(new Coordinate2D(900, 600), zee));
-        addEntity(new MiniGame(new Coordinate2D(350, 75)));
+        addEntity(miniGame);
         addEntity(new MiniGameFish(new Coordinate2D(382, 230)));
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
         if (mouseButton == MouseButton.PRIMARY) {
-            if(!isFishing) {
-                addEntity(new Dobber(new Coordinate2D(coordinate2D.getX() - 20, coordinate2D.getY() - 30)));
+            if (!isFishing) {
+                addEntity(new Dobber(new Coordinate2D(coordinate2D.getX() - 20, coordinate2D.getY() - 30), miniGame));
                 isFishing = true;
             }
         }
     }
-
 }
