@@ -2,6 +2,7 @@ package com.github.hanyaeger.FishingSimulator;
 
 import com.github.hanyaeger.FishingSimulator.entities.FishShadow;
 import com.github.hanyaeger.FishingSimulator.entities.MiniGame;
+import com.github.hanyaeger.FishingSimulator.entities.MiniGameBalk;
 import com.github.hanyaeger.FishingSimulator.entities.MiniGameFish;
 import com.github.hanyaeger.FishingSimulator.scenes.GameScene;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -16,11 +17,13 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
 
     private MiniGame miniGame;
     private MiniGameFish miniGameFish;
+    private MiniGameBalk miniGameBalk;
 
-    public Dobber(Coordinate2D initialLocation, MiniGame miniGame, MiniGameFish miniGameFish) {
+    public Dobber(Coordinate2D initialLocation, MiniGame miniGame, MiniGameFish miniGameFish, MiniGameBalk miniGameBalk) {
         super("sprites/dobber.png", initialLocation);
         this.miniGame = miniGame;
         this.miniGameFish = miniGameFish;
+        this.miniGameBalk = miniGameBalk;
     }
 
     @Override
@@ -28,6 +31,7 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
         if (collider instanceof FishShadow) {
             miniGame.showMiniGame(true);
             miniGameFish.showMiniGameFish(true);
+            miniGameBalk.showBalk(true);
         }
     }
 
