@@ -22,13 +22,13 @@ public class Zee extends RectangleEntity implements Collided {
 
     @Override
     public void onCollision(Collider collider) {
-    //    if (collider instanceof FishShadow) {
-    //        ((FishShadow) collider).setAnchorLocationX(
-    //                Math.random() * (getWidth() - ((FishShadow) collider).getWidth())
-    //        );
-    //        ((FishShadow) collider).setAnchorLocationY(
-    //                Math.random() * (getHeight() - ((FishShadow) collider).getHeight())
-    //        );
-    //    }
+        if (collider instanceof FishShadow) {
+            ((FishShadow) collider).setMotion(1, randomizeAngle(0, 360)
+            );
+        }
+    }
+
+    private double randomizeAngle(int i, int i1) {
+        return Math.random() * (i1 - i) + i;
     }
 }
