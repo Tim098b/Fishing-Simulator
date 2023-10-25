@@ -10,6 +10,7 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import javafx.scene.input.MouseButton;
+import javafx.scene.paint.Color;
 
 public class GameScene extends DynamicScene implements MouseButtonPressedListener {
 
@@ -25,6 +26,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
     MiniGame miniGame = new MiniGame(new Coordinate2D(350, 75));
     MiniGameFish miniGameFish = new MiniGameFish(new Coordinate2D(382, 230));
     MiniGameBalk miniGameBalk = new MiniGameBalk(new Coordinate2D(390, 230));
+    ScoreText scoreText = new ScoreText(new Coordinate2D(30, 30), 0);
 
     @Override
     public void setupEntities() {
@@ -33,9 +35,10 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         addEntity(new MiniGameBorder(new Coordinate2D(400, 60), new Size(50, 50)));
         addEntity(new MiniGameBorder(new Coordinate2D(400, 440), new Size(50, 50)));
         addEntity(new Player(new Coordinate2D(250, 400)));
-        addEntity(new FishShadow(new Coordinate2D(900, 600)));
-        addEntity(new FishShadow(new Coordinate2D(900, 600)));
-        addEntity(new ScoreText(new Coordinate2D(30, 30), 0));
+        for (int i = 0; i < 2; i++) {
+            addEntity(new FishShadow(new Coordinate2D(900, 600)));
+        }
+        addEntity(scoreText);
         addEntity(miniGame);
         addEntity(miniGameBalk);
         addEntity(miniGameFish);
@@ -56,10 +59,19 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
                 double fishBottom = fishTop + miniGameFish.getHeight();
 
                 if (balkTop < fishTop && balkBottom > fishBottom) {
-                    System.out.println("Goed");
-                } else {
-                    System.out.println("Fout");
+                    scoreText.setFill(Color.BLUE);
+                    scoreText.setScore(scoreText.getScore() + 2);
                 }
+                else {
+                    scoreText.setFill(Color.RED);
+                    scoreText.setScore(scoreText.getScore() - 1);
+                }
+                miniGame.showMiniGame(false);
+                miniGameBalk.showMiniGameBalk(false);
+                miniGameFish.showMiniGameFish(false);
+                inMiniGame = false;
+                isFishing = false;
+                addEntity(new FishShadow(new Coordinate2D(900, 600)));
             }
         }
     }
