@@ -15,7 +15,7 @@ public class MiniGameFish extends SpriteEntity {
         remove();
     }
 
-    public void isVisable(boolean visable) {
-        setVisible(visable);
+    public void showMiniGameFish(boolean visible) {
+        setVisible(visible);
     }
 }
