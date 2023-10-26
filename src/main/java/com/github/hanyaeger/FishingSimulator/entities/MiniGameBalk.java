@@ -11,8 +11,8 @@ public class MiniGameBalk extends DynamicSpriteEntity implements Collider, Scene
     private int speed = 0;
     private int score;
 
-    public MiniGameBalk(Coordinate2D initialLocation) {
-        super("sprites/minigame_balk.png", initialLocation, new Size(22, 49), 1, 1);
+    public MiniGameBalk() {
+        super("sprites/minigame_balk.png", new Coordinate2D(390, 230), new Size(22, 49), 1, 1);
         setMotion(speed, 180);
         setVisible(false);
     }
