@@ -14,11 +14,13 @@ import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import javafx.scene.input.MouseButton;
 
 
+
 public class Dobber extends DynamicSpriteEntity implements Collided, MouseButtonPressedListener {
 
     private MiniGame miniGame;
     private MiniGameFish miniGameFish;
     private MiniGameBalk miniGameBalk;
+
 
     public Dobber(Coordinate2D initialLocation, MiniGame miniGame, MiniGameFish miniGameFish, MiniGameBalk miniGameBalk) {
         super("sprites/dobber.png", initialLocation, new Size(25, 60), 1, 1);
@@ -30,9 +32,13 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
     @Override
     public void onCollision(Collider collider) {
         if (collider instanceof FishShadow) {
+            int random = (int) (Math.random() * 3 + 1);
+            miniGameBalk.setSpeed(random);
+            miniGameBalk.setScore(random);
             miniGame.showMiniGame(true);
             miniGameFish.showMiniGameFish(true);
             miniGameBalk.showMiniGameBalk(true);
+
             remove();
             ((FishShadow) collider).remove();
             GameScene.inMiniGame = true;
