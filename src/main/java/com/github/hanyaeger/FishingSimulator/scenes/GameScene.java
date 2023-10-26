@@ -25,7 +25,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
 
     MiniGame miniGame = new MiniGame(new Coordinate2D(350, 75));
     MiniGameFish miniGameFish = new MiniGameFish(new Coordinate2D(382, 230));
-    MiniGameBalk miniGameBalk = new MiniGameBalk(new Coordinate2D(390, 230));
+    MiniGameBalk miniGameBalk = new MiniGameBalk();
     ScoreText scoreText = new ScoreText(new Coordinate2D(30, 30), 0);
 
     @Override
