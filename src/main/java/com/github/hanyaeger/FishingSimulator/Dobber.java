@@ -33,6 +33,7 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
             miniGame.showMiniGame(true);
             miniGameFish.showMiniGameFish(true);
             miniGameBalk.showMiniGameBalk(true);
+
             remove();
             ((FishShadow) collider).remove();
             GameScene.inMiniGame = true;

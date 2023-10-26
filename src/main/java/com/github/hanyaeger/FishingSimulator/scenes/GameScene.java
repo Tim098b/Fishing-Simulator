@@ -60,7 +60,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
 
                 if (balkTop < fishTop && balkBottom > fishBottom) {
                     scoreText.setFill(Color.BLUE);
-                    scoreText.setScore(scoreText.getScore() + 2);
+                    scoreText.setScore(scoreText.getScore() + miniGameBalk.getScore());
                 }
                 else {
                     scoreText.setFill(Color.RED);
