@@ -8,9 +8,12 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 
 public class MiniGameBalk extends DynamicSpriteEntity implements Collider, SceneBorderTouchingWatcher {
+    private int speed = 0;
+    private int score;
+
     public MiniGameBalk(Coordinate2D initialLocation) {
         super("sprites/minigame_balk.png", initialLocation, new Size(22, 49), 1, 1);
-        setMotion(1, 180);
+        setMotion(speed, 180);
         setVisible(false);
     }
 
@@ -18,10 +21,21 @@ public class MiniGameBalk extends DynamicSpriteEntity implements Collider, Scene
         setVisible(visible);
     }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-        switch (sceneBorder)
-        {
+        switch (sceneBorder) {
             case TOP, BOTTOM:
                 setAnchorLocationY(230);
                 break;
