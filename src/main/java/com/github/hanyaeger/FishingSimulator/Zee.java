@@ -18,6 +18,9 @@ public class Zee extends Borders implements Collided {
             System.out.println("FishShadow collided");
             ((FishShadow) collider).setMotion(1, randomizeAngle(0, 360));
         }
+        else {
+            System.out.println(collider.getClass().getSimpleName() + " collided");
+        }
     }
 
     private double randomizeAngle(int i, int i1) {
