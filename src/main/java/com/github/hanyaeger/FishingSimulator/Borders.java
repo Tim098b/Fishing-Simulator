@@ -13,7 +13,7 @@ public class Borders extends RectangleEntity {
         setWidth(size.width());
         setHeight(size.height());
         setFill(Color.TRANSPARENT);
-        setStrokeColor(Color.RED);
-        setStrokeWidth(1D);
+//        setStrokeColor(Color.RED);
+//        setStrokeWidth(1D);
     }
 }
