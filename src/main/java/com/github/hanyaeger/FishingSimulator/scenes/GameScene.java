@@ -52,7 +52,6 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
                 isFishing = true;
             }
             if (inMiniGame) {
-                System.out.println("inMiniGame");
                 double balkTop = miniGameBalk.getAnchorLocation().getY();
                 double balkBottom = balkTop + miniGameBalk.getHeight();
 
