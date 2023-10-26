@@ -15,11 +15,7 @@ public class Zee extends Borders implements Collided {
     @Override
     public void onCollision(Collider collider) {
         if (collider instanceof FishShadow) {
-            System.out.println("FishShadow collided");
             ((FishShadow) collider).setMotion(1, randomizeAngle(0, 360));
-        }
-        else {
-            System.out.println(collider.getClass().getSimpleName() + " collided");
         }
     }
 
