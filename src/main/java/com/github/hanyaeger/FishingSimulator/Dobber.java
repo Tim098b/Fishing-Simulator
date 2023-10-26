@@ -6,6 +6,7 @@ import com.github.hanyaeger.FishingSimulator.entities.MiniGameBalk;
 import com.github.hanyaeger.FishingSimulator.entities.MiniGameFish;
 import com.github.hanyaeger.FishingSimulator.scenes.GameScene;
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
@@ -20,7 +21,7 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
     private MiniGameBalk miniGameBalk;
 
     public Dobber(Coordinate2D initialLocation, MiniGame miniGame, MiniGameFish miniGameFish, MiniGameBalk miniGameBalk) {
-        super("sprites/dobber.png", initialLocation);
+        super("sprites/dobber.png", initialLocation, new Size(25, 60), 1, 1);
         this.miniGame = miniGame;
         this.miniGameFish = miniGameFish;
         this.miniGameBalk = miniGameBalk;
@@ -31,9 +32,10 @@ public class Dobber extends DynamicSpriteEntity implements Collided, MouseButton
         if (collider instanceof FishShadow) {
             miniGame.showMiniGame(true);
             miniGameFish.showMiniGameFish(true);
-            miniGameBalk.showBalk(true);
+            miniGameBalk.showMiniGameBalk(true);
             remove();
             ((FishShadow) collider).remove();
+            GameScene.inMiniGame = true;
             //GameScene.isFishing = false;
         }
     }
