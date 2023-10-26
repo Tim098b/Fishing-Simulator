@@ -12,6 +12,8 @@ import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 public class GameScene extends DynamicScene implements MouseButtonPressedListener {
 
     public static boolean isFishing = false;
@@ -27,6 +29,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
     MiniGameFish miniGameFish = new MiniGameFish(new Coordinate2D(382, 230));
     MiniGameBalk miniGameBalk = new MiniGameBalk();
     ScoreText scoreText = new ScoreText(new Coordinate2D(30, 30), 0);
+    ArrayList<FishShadow> fishShadows = new ArrayList<>();
 
     @Override
     public void setupEntities() {
@@ -35,13 +38,16 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
         addEntity(new MiniGameBorder(new Coordinate2D(400, 85), new Size(50, 1)));
         addEntity(new MiniGameBorder(new Coordinate2D(400, 415), new Size(50, 1)));
         addEntity(new Player(new Coordinate2D(250, 400)));
-        for (int i = 0; i < 2; i++) {
-            addEntity(new FishShadow(new Coordinate2D(900, 600)));
-        }
+        fishShadows.add(new SquareShadow());
+        fishShadows.add(new RandomShadow());
         addEntity(scoreText);
         addEntity(miniGame);
         addEntity(miniGameBalk);
         addEntity(miniGameFish);
+        for (FishShadow fishShadow : fishShadows) {
+            addEntity(fishShadow);
+            fishShadow.move();
+        }
     }
 
     @Override
@@ -61,8 +67,7 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
                 if (balkTop < fishTop && balkBottom > fishBottom) {
                     scoreText.setFill(Color.BLUE);
                     scoreText.setScore(scoreText.getScore() + miniGameBalk.getScore());
-                }
-                else {
+                } else {
                     scoreText.setFill(Color.RED);
                     scoreText.setScore(scoreText.getScore() - 1);
                 }
@@ -71,7 +76,9 @@ public class GameScene extends DynamicScene implements MouseButtonPressedListene
                 miniGameFish.showMiniGameFish(false);
                 inMiniGame = false;
                 isFishing = false;
-                addEntity(new FishShadow(new Coordinate2D(900, 600)));
+                FishShadow fishShadow = fishShadows.get((int) (Math.random() * fishShadows.size()));
+                addEntity(fishShadow);
+                fishShadow.move();
             }
         }
     }
