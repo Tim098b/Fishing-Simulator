@@ -15,11 +15,7 @@ public class Zee extends Borders implements Collided {
     @Override
     public void onCollision(Collider collider) {
         if (collider instanceof FishShadow) {
-            ((FishShadow) collider).setMotion(1, randomizeAngle(0, 360));
+            ((FishShadow) collider).changeDirection(90);
         }
-    }
-
-    private double randomizeAngle(int i, int i1) {
-        return Math.random() * (i1 - i) + i;
     }
 }
