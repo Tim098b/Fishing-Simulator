@@ -1,4 +1,4 @@
-package com.github.hanyaeger.FishingSimulator;
+package com.github.hanyaeger.FishingSimulator.entities.borders;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;

@@ -1,4 +1,4 @@
-package com.github.hanyaeger.FishingSimulator.entities;
+package com.github.hanyaeger.FishingSimulator.entities.minigame;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;

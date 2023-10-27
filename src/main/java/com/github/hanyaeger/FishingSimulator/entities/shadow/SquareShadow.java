@@ -1,6 +1,7 @@
-package com.github.hanyaeger.FishingSimulator.entities;
+package com.github.hanyaeger.FishingSimulator.entities.shadow;
 
 import com.github.hanyaeger.FishingSimulator.Timers.ShadowFishTimer;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.FishShadow;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.entities.Direction;
