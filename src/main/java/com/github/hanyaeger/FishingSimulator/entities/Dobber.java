@@ -1,9 +1,9 @@
-package com.github.hanyaeger.FishingSimulator;
+package com.github.hanyaeger.FishingSimulator.entities;
 
-import com.github.hanyaeger.FishingSimulator.entities.FishShadow;
-import com.github.hanyaeger.FishingSimulator.entities.MiniGame;
-import com.github.hanyaeger.FishingSimulator.entities.MiniGameBalk;
-import com.github.hanyaeger.FishingSimulator.entities.MiniGameFish;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.FishShadow;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGame;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGameBalk;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGameFish;
 import com.github.hanyaeger.FishingSimulator.scenes.GameScene;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;

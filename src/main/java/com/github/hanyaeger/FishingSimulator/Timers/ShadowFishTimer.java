@@ -1,6 +1,6 @@
 package com.github.hanyaeger.FishingSimulator.Timers;
 
-import com.github.hanyaeger.FishingSimulator.entities.FishShadow;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.FishShadow;
 import com.github.hanyaeger.api.Timer;
 
 public class ShadowFishTimer extends Timer {

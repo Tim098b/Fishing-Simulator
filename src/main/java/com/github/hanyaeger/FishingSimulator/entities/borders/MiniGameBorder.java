@@ -1,6 +1,7 @@
-package com.github.hanyaeger.FishingSimulator;
+package com.github.hanyaeger.FishingSimulator.entities.borders;
 
-import com.github.hanyaeger.FishingSimulator.entities.MiniGameBalk;
+import com.github.hanyaeger.FishingSimulator.entities.borders.Borders;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGameBalk;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;

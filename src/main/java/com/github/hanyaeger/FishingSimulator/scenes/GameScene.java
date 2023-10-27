@@ -1,9 +1,15 @@
 package com.github.hanyaeger.FishingSimulator.scenes;
 
-import com.github.hanyaeger.FishingSimulator.Dobber;
-import com.github.hanyaeger.FishingSimulator.MiniGameBorder;
-import com.github.hanyaeger.FishingSimulator.Zee;
+import com.github.hanyaeger.FishingSimulator.entities.Dobber;
+import com.github.hanyaeger.FishingSimulator.entities.borders.MiniGameBorder;
+import com.github.hanyaeger.FishingSimulator.entities.borders.Zee;
 import com.github.hanyaeger.FishingSimulator.entities.*;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGame;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGameBalk;
+import com.github.hanyaeger.FishingSimulator.entities.minigame.MiniGameFish;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.FishShadow;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.RandomShadow;
+import com.github.hanyaeger.FishingSimulator.entities.shadow.SquareShadow;
 import com.github.hanyaeger.FishingSimulator.text.ScoreText;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
